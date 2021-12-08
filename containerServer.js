@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 
@@ -66,11 +67,19 @@ let products = [
 	},
 ];
 
+app.use(cors());
+
+app.use((req, res, next) => {
+	console.log('petition received');
+	next();
+});
+
 app.get('/current-user', (req, res) => res.json(currentUser));
 
 app.get('/users/:id', (req, res) => {
 	const { id } = req.params;
-	res.json(users.find(user => user.id === id));
+	console.log('works');
+	res.json(users.find(user => user.id !== id));
 });
 
 app.post('/users/:id', (req, res) => {
@@ -85,7 +94,8 @@ app.get('/users', (req, res) => res.json(users));
 
 app.get('/products/:id', (req, res) => {
 	const { id } = req.params;
-	res.json(products.find(product => product.id === id));
+	console.log('works');
+	res.json(products.find(product => product.id == id));
 });
 
 app.get('/products', (req, res) => res.json(products));
