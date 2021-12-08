@@ -1,8 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import { RegularList } from './RegularList';
-import { SmallPersonlistItem } from './people/SmallPersonListItem';
-import { LargePersonListItem } from './people/LargePersonListItem';
 
 const people = [
 	{
@@ -34,20 +31,7 @@ const products = [
 ];
 
 function App() {
-	return (
-		<>
-			<RegularList
-				items={people}
-				resourceName="person"
-				itemComponent={LargePersonListItem}
-			/>
-			<RegularList
-				items={people}
-				resourceName="person"
-				itemComponent={SmallPersonlistItem}
-			/>
-		</>
-	);
+	
 }
 
 export default App;
