@@ -1,6 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {}
+const App = () => {
+	return (
+		<div>
+			<p>Testing</p>
+			<p>Testing</p>
+		</div>
+	);
+};
 
 export default App;
